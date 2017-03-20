@@ -1,0 +1,31 @@
+{
+  "name": "jest-enzyme-matchers",
+  "version": "0.0.1",
+  "description": "Enzyme specific jest matchers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precompile": "rm -rf dist; mkdir dist",
+    "compile": "babel -d dist src",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dferber90/jest-enzyme-matchers.git"
+  },
+  "keywords": [],
+  "author": "Dominik Ferber <dominik.ferber+npm@gmail.com> (http://dferber.de/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dferber90/jest-enzyme-matchers/issues"
+  },
+  "homepage": "https://github.com/dferber90/jest-enzyme-matchers#readme",
+  "dependencies": {
+    "common-tags": "1.4.0",
+    "react-display-name": "0.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.24.0",
+    "babel-preset-es2015": "6.24.0"
+  }
+}
