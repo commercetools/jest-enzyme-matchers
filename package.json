@@ -1,6 +1,6 @@
 {
   "name": "jest-enzyme-matchers",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Enzyme specific jest matchers",
   "main": "dist/index.js",
   "scripts": {
