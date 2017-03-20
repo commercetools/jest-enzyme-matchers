@@ -24,3 +24,42 @@ Enzyme specific jest matchers
   // more expect.extend calls for your own matcheres
   // expect.extend({ /* ... */ })
   ```
+
+## Usage
+
+#### `toRender(selector)`
+
+Passes when at least one element matching the [`selector`](https://github.com/airbnb/enzyme/blob/master/docs/api/selector.md) is found in the wrapper.
+
+```js
+import Icon from 'somewhere'
+
+describe('Component', () => {
+  const wrapper = shallow(<Component />)
+  it('should render an Icon', () => {
+    expect(wrapper).toRender(Icon)
+  })
+  it('should render a Button', () => {
+    expect(wrapper).toRender('Button')
+  })
+})
+```
+
+#### `toRenderElementTimes(selector, times)`
+
+
+Passes when the number of elements matching the [`selector`](https://github.com/airbnb/enzyme/blob/master/docs/api/selector.md) found in the wrapper matches `times` exactly.
+
+```js
+import Icon from 'somewhere'
+
+describe('Component', () => {
+  const wrapper = shallow(<Component />)
+  it('should render one Icon', () => {
+    expect(wrapper).toRenderElementTimes(Icon, 1)
+  })
+  it('should render two Buttons', () => {
+    expect(wrapper).toRenderElementTimes('Button', 2)
+  })
+})
+```
