@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dferber90/jest-enzyme-matchers.git"
+    "url": "git+https://github.com/commercetools/jest-enzyme-matchers.git"
   },
   "keywords": [],
   "author": "Dominik Ferber <dominik.ferber+npm@gmail.com> (http://dferber.de/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dferber90/jest-enzyme-matchers/issues"
+    "url": "https://github.com/commercetools/jest-enzyme-matchers/issues"
   },
-  "homepage": "https://github.com/dferber90/jest-enzyme-matchers#readme",
+  "homepage": "https://github.com/commercetools/jest-enzyme-matchers#readme",
   "dependencies": {
     "common-tags": "1.4.0",
     "react-display-name": "0.2.0"
