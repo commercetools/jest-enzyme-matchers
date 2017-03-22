@@ -1,11 +1,11 @@
-# jest-enzyme-matchers
+# @commercetools/jest-enzyme-matchers
 Enzyme specific jest matchers
 
 ## Installation
 
 1. Add package
 
-  `npm install jest-enzyme-matchers --save-dev`
+  `npm install @commercetools/jest-enzyme-matchers --save-dev`
 
 2. Add `testFrameworkScriptFile`
 
@@ -17,7 +17,7 @@ Enzyme specific jest matchers
   In that `testFrameworkScriptFile` file, import the matchers and add them to jest
 
   ```js
-  import * as enzymeMatchers from 'jest-enzyme-matchers'
+  import * as enzymeMatchers from '@commercetools/jest-enzyme-matchers'
 
   expect.extend(enzymeMatchers)
 
