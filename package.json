@@ -1,5 +1,5 @@
 {
-  "name": "jest-enzyme-matchers",
+  "name": "@commercetools/jest-enzyme-matchers",
   "version": "1.0.0",
   "description": "Enzyme specific jest matchers",
   "main": "dist/index.js",
