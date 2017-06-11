@@ -1,9 +1,15 @@
 import stripIndent from 'common-tags/lib/stripIndent'
 import getDisplayName from 'react-display-name'
 
+const getComponentName = element => typeof element === 'string'
+  ? element
+  : getDisplayName(element)
+
+const isWrapper = wrapper => wrapper && wrapper.debug && wrapper.find
+
 export function toRender (wrapper, element) {
   // check that received is actually a wrapper
-  if (!wrapper || !wrapper.debug || !wrapper.find) {
+  if (!isWrapper(wrapper)) {
     const matcherHint = this.isNot ? '.not.toRender' : '.toRender'
     return {
       pass: this.isNot,
@@ -16,9 +22,7 @@ export function toRender (wrapper, element) {
   }
 
   const pass = wrapper.find(element).length > 0
-  const componentName = typeof element === 'string'
-    ? element
-    : getDisplayName(element)
+  const componentName = getComponentName(element)
 
   const message = pass
     ? () => stripIndent`
@@ -39,7 +43,7 @@ export function toRender (wrapper, element) {
 
 export function toRenderElementTimes (wrapper, element, times) {
   // check that received is actually a wrapper
-  if (!wrapper || !wrapper.debug || !wrapper.find) {
+  if (!isWrapper(wrapper)) {
     const matcherHint = this.isNot
       ? '.not.toRenderElementTimes'
       : '.toRenderElementTimes'
@@ -55,9 +59,7 @@ export function toRenderElementTimes (wrapper, element, times) {
 
   const actualTimes = wrapper.find(element).length
   const pass = actualTimes === times
-  const componentName = typeof element === 'string'
-    ? element
-    : getDisplayName(element)
+  const componentName = getComponentName(element)
 
   const componentString = this.utils.printExpected(componentName)
   const timeString = this.utils.printExpected(times)
