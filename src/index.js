@@ -76,35 +76,35 @@ export function toRenderElementTimes (wrapper, element, times) {
   return { actual: wrapper, message, pass }
 }
 
-export function toContainClass (wrapper, className) {
-  if (!isWrapper(wrapper)) {
+export function toContainClass (element, className) {
+  if (!isWrapper(element)) {
     const matcherHint = this.isNot ? '.not.toContainClass' : '.toContainClass'
     return {
       pass: this.isNot,
       message: stripIndent`
         ${this.utils.matcherHint(matcherHint)}\n
-          Argument passed to expect() must be an enzyme wrapper.
+          Argument passed to expect() must be an enzyme element.
           Received:
-            ${this.utils.printReceived(wrapper)}`,
+            ${this.utils.printReceived(element)}`,
     }
   }
 
-  const pass = wrapper.hasClass(className)
-  const componentName = getComponentName(wrapper)
+  const pass = element.hasClass(className)
+  const componentName = getComponentName(element)
 
   const message = pass
     ? () => stripIndent`
       ${this.utils.matcherHint('.not.toContainClass')}\n
-        Expected wrapper to not render:
+        Expected element to not contain class:
           ${this.utils.printExpected(componentName)}
         Received:
-          ${this.utils.printReceived(wrapper.debug())}`
+          ${this.utils.printReceived(element.debug())}`
     : () => stripIndent`
       ${this.utils.matcherHint('.toContainClass')}\n
-        Expected value to render:
+        Expected value to contain class:
           ${this.utils.printExpected(componentName)}
         Received:
-          ${this.utils.printReceived(wrapper.debug())}`
+          ${this.utils.printReceived(element.debug())}`
 
-  return { actual: wrapper, message, pass }
+  return { actual: element, message, pass }
 }
