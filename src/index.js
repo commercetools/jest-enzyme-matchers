@@ -26,7 +26,7 @@ export function toRender (wrapper, element) {
   const message = pass
     ? () => stripIndent`
       ${this.utils.matcherHint('.not.toRender')}\n
-        Expected wrapper to not render:
+        Expected wrapper not to render:
           ${this.utils.printExpected(componentName)}
         Received:
           ${this.utils.printReceived(wrapper.debug())}`
@@ -64,7 +64,7 @@ export function toRenderElementTimes (wrapper, element, times) {
   const message = pass
     ? () => stripIndent`
       ${this.utils.matcherHint('.not.toRenderElementTimes')}\n
-        Expected wrapper to not render ${componentString} ${timeString} times.
+        Expected wrapper not to render ${componentString} ${timeString} times.
         It was rendered ${this.utils.printReceived(actualTimes)} times:
           ${this.utils.printReceived(wrapper.debug())}`
     : () => stripIndent`
@@ -95,7 +95,7 @@ export function toContainClass (element, className) {
   const message = pass
     ? () => stripIndent`
       ${this.utils.matcherHint('.not.toContainClass')}\n
-        Expected element to not contain class:
+        Expected element not to contain class:
           ${this.utils.printExpected(componentName)}
         Received:
           ${this.utils.printReceived(element.debug())}`
