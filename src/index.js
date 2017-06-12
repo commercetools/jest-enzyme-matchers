@@ -8,7 +8,6 @@ const getComponentName = element => typeof element === 'string'
 const isWrapper = wrapper => Boolean(wrapper && wrapper.debug && wrapper.find)
 
 export function toRender (wrapper, element) {
-  // check that received is actually a wrapper
   if (!isWrapper(wrapper)) {
     const matcherHint = this.isNot ? '.not.toRender' : '.toRender'
     return {
@@ -42,7 +41,6 @@ export function toRender (wrapper, element) {
 }
 
 export function toRenderElementTimes (wrapper, element, times) {
-  // check that received is actually a wrapper
   if (!isWrapper(wrapper)) {
     const matcherHint = this.isNot
       ? '.not.toRenderElementTimes'
@@ -79,7 +77,6 @@ export function toRenderElementTimes (wrapper, element, times) {
 }
 
 export function toContainClass (wrapper, className) {
-  // check that received is actually a wrapper
   if (!isWrapper(wrapper)) {
     const matcherHint = this.isNot ? '.not.toContainClass' : '.toContainClass'
     return {
