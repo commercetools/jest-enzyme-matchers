@@ -5,7 +5,7 @@ const getComponentName = element => typeof element === 'string'
   ? element
   : getDisplayName(element)
 
-const isWrapper = wrapper => wrapper && wrapper.debug && wrapper.find
+const isWrapper = wrapper => Boolean(wrapper && wrapper.debug && wrapper.find)
 
 export function toRender (wrapper, element) {
   // check that received is actually a wrapper
