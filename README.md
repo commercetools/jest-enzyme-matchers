@@ -63,3 +63,20 @@ describe('Component', () => {
   })
 })
 ```
+
+#### `toContainClass(selector, className)`
+
+
+Passes when the className is present on the element matching the [`selector`](https://github.com/airbnb/enzyme/blob/master/docs/api/selector.md).
+
+```js
+describe('Component', () => {
+  const wrapper = shallow(<Component />)
+  it('should add the class name', () => {
+    expect(wrapper).toContainClass('foo')
+  })
+  it('should not add the class name', () => {
+    expect(wrapper).not.toContainClass('bar')
+  })
+})
+```
