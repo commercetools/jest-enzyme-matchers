@@ -64,10 +64,10 @@ describe('Component', () => {
 })
 ```
 
-#### `toContainClass(selector, className)`
+#### `toContainClass(className)`
 
 
-Passes when the className is present on the element matching the [`selector`](https://github.com/airbnb/enzyme/blob/master/docs/api/selector.md).
+Passes when the `className` is present on the wrapper passed to `expect`.
 
 ```js
 describe('Component', () => {
